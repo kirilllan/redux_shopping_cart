@@ -11,9 +11,16 @@ import SingleItem from './components/SingleItem/SingleItem'
 
 function App() {
   return (
-    <div className="App">
-      hello from App.js
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Products} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/product/:id" component={SingleItem} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
