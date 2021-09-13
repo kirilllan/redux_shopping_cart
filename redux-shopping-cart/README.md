@@ -1,3 +1,4 @@
 # Base for a shopping card app, with Redux
 
-    nom install react-router-dom
+    npm install react-router-dom
+    npm i redux react-redux
