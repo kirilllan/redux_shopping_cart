@@ -25,7 +25,9 @@ const shopReducer = (state = initialState, action) => {
         cart: inCart ? state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item)
           : [...state.cart, { ...item, quantity: 1 }]
       }
-    case actionTypes.REMOVE_FROM_CART: return {}
+    case actionTypes.REMOVE_FROM_CART: return {
+      ...state, cart: state.cart.filter(item => item.id !== action.payload.id)
+    }
     case actionTypes.ADJUST_QUANTITY: return {}
     case actionTypes.LOAD_CURRENT_ITEM: return {}
     default: return state
