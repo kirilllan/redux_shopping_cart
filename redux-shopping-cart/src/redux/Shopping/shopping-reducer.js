@@ -28,8 +28,12 @@ const shopReducer = (state = initialState, action) => {
     case actionTypes.REMOVE_FROM_CART: return {
       ...state, cart: state.cart.filter(item => item.id !== action.payload.id)
     }
-    case actionTypes.ADJUST_QUANTITY: return {}
-    case actionTypes.LOAD_CURRENT_ITEM: return {}
+    case actionTypes.ADJUST_QUANTITY: return {
+      ...state, cart: state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: action.payload.quantity } : item)
+    }
+    case actionTypes.LOAD_CURRENT_ITEM: return {
+      ...state, currentItem: action.payload
+    }
     default: return state
   }
 }
