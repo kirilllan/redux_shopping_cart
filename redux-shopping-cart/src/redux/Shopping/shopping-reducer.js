@@ -1,7 +1,15 @@
 import * as actionTypes from './shopping-types'
 
 const initialState = {
-  products: [], //{id, title, descr, price, img}
+  products: [
+    {
+      id: 1,
+      title: 'title1',
+      description: 'description1',
+      price: 1,
+      image: 'grid1.png'
+    }
+  ], //{id, title, descr, price, img}
   cart: [], //{id, title, descr, price, img, QUANTITY}
   currentItem: null
 }
