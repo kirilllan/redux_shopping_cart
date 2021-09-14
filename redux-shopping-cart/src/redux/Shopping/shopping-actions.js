@@ -23,7 +23,7 @@ export const adjustQuantity = (itemId, value) => {
     type: actionTypes.ADJUST_QUANTITY,
     payload: {
       id: itemId,
-      qty: value
+      quantity: value
     }
   }
 }
