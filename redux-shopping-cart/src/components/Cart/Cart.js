@@ -7,7 +7,7 @@ function Cart({ cart }) {
   return (
     <div className={styles.cart}>
       <div className={styles.cart__items}>
-        {cart.map(_ => (<CartItem />))}
+        {cart.map(item => (<CartItem itemData={item} key={item.id} />))}
       </div>
       <div className={styles.cart__summary}>
         <h4 className={styles.summary__title}>Cart summary</h4>
