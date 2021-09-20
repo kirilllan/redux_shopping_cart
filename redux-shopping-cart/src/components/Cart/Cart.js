@@ -1,12 +1,13 @@
 import React from 'react'
 import CartItem from './CartItem/CartItem'
 import styles from './Cart.module.css'
+import { connect } from 'react-redux'
 
-export default function Cart() {
+function Cart({ cart }) {
   return (
     <div className={styles.cart}>
       <div className={styles.cart__items}>
-        <CartItem />
+        {cart.map(_ => (<CartItem />))}
       </div>
       <div className={styles.cart__summary}>
         <h4 className={styles.summary__title}>Cart summary</h4>
@@ -19,3 +20,11 @@ export default function Cart() {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    cart: state.shop.cart
+  }
+}
+
+export default connect(mapStateToProps)(Cart)
