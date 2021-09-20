@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './CartItem.module.css'
+import { connect } from 'react-redux'
+import { removeFromCart } from '../../../redux/Shopping/shopping-actions'
 
-const CartItem = ({ itemData }) => {
+const CartItem = ({ itemData, removeFromCart }) => {
   return (
     <div className={styles.cartItem}>
       <img className={styles.cartItem__image}
@@ -18,9 +20,10 @@ const CartItem = ({ itemData }) => {
           <label htmlFor="quantity">Quantity</label>
           <input min="1" type="number" id="quantity" value={itemData.quantity} />
         </div>
-        <button className={styles.actions__deleteItemBtn}>
+        <button className={styles.actions__deleteItemBtn} onClick={() => removeFromCart(itemData.id)}>
           <svg width="200" height="100">
             <rect width="200" height="100" stroke="yellow" stroke-width="4" fill="red" />
+            {/* <polygon points="200 100 50 0" style="fill:white;stroke:black;stroke-width:3;fill-rule:nonzero;" /> */}
           </svg>
         </button>
       </div>
@@ -28,4 +31,10 @@ const CartItem = ({ itemData }) => {
   )
 }
 
-export default CartItem
+const mapDispatchToProps = dispatch => {
+  return {
+    removeFromCart: (id) => dispatch(removeFromCart())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CartItem)
