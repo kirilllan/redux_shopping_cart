@@ -13,6 +13,8 @@ build/Release
 node_modules
 node_modules/
 jspm_packages/
+/.pnp
+.pnp.js
 
 # Distribution directories
 dist/
@@ -34,3 +36,17 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# testing
+/coverage
+
+#production
+/build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
