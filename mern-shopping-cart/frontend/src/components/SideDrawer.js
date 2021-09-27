@@ -1,10 +1,12 @@
-import './Backdrop.css'
+import './SideDrawer.css'
 
-function SideDrawer() {
+function SideDrawer({ show }) {
+  const sideDrawerClass = ["sidedrawer"]
+  if (show) {
+    sideDrawerClass.push('show')
+  }
   return (
-    <div className="backdrop">
-
-    </div>
+    <div className={sideDrawerClass.join(' ')}></div>
   )
 }
 
