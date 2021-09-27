@@ -13,7 +13,7 @@ function SideDrawer({ show, click }) {
           <Link to="/cart">
             <i className="fas fa-shopping-cart"></i>
             <span>
-              Cart <span className="sidedrawer__cartbadge"></span>
+              Cart <span className="sidedrawer__cartbadge">0</span>
             </span>
           </Link>
         </li>
