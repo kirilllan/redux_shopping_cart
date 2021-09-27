@@ -6,11 +6,13 @@ import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
 
 import Navbar from './components/Navbar'
+import Backdrop from './components/Backdrop'
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <Backdrop />
       <main>
         hiii
         <Switch>
