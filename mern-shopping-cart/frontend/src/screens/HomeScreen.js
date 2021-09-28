@@ -3,7 +3,10 @@ import './HomeScreen.css'
 function HomeScreen() {
   return (
     <div className="homescreen">
-      Home screen
+      <h2 className="homescreen_title">Latest products</h2>
+      <div className="homescreen__products">
+        <Product />
+      </div>
     </div>
   )
 }
