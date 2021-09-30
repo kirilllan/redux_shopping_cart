@@ -14,7 +14,14 @@ function ProductScreen() {
         </div>
       </div>
       <div className="productscreen__right">
-
+        <div ckassName="right__info">
+          <p>Price: <span>$499.99</span></p>
+          <p>Status:<span>In stock</span></p>
+          <p>Quantity:<select>
+            <option value="1">1</option>
+          </select></p>
+          <p><button type="button">add to cart</button></p>
+        </div>
       </div>
     </div>
   )
