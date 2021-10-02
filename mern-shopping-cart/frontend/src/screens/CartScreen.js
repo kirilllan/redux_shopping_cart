@@ -3,7 +3,12 @@ import './CartScreen.css'
 function CartScreen() {
   return (
     <div className="cartscreen">
-      Cart Screen
+      <div className="cartscreen__left">
+        <h2>Shopping Cart</h2>
+        <CartItem />
+      </div>
+      <div className="cartscreen__right">
+      </div>
     </div>
   )
 }
