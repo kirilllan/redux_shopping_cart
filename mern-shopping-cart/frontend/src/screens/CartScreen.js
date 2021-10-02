@@ -1,4 +1,5 @@
 import './CartScreen.css'
+import '../components/CartItem'
 
 function CartScreen() {
   return (
