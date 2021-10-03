@@ -9,6 +9,11 @@ function CartScreen() {
         <CartItem />
       </div>
       <div className="cartscreen__right">
+        <div className="cartscreen__info">
+          <p>Subtotal (0) items</p>
+          <p>$Price</p>
+        </div>
+        <div>Proceed to checkout</div>
       </div>
     </div>
   )
