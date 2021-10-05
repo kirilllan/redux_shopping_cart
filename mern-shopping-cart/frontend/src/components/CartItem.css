@@ -15,6 +15,26 @@
   color: #171717;
 }
 
-.cartitem__name::hover {
+.cartitem__name:hover {
   color: #dd219e;
+}
+
+.cartitem__select {
+  padding: 20px 17px;
+}
+
+.cartitem__deleteBtn {
+  padding: 20px 17px;
+  color: red;
+  background: white;
+  border: 1px solid #171717;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.cartItem__deleteBtn:hover,
+.cartItem__deleteBtn:focus,
+.cartItem__deleteBtn:active {
+  background: #171717;
+  transform: scale(1.2);
 }
