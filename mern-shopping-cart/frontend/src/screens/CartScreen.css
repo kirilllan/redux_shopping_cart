@@ -47,3 +47,25 @@
 .cartscreen__rigth div button:hover {
   opacity: 0.9;
 }
+
+
+@media (max-width: 1320px) {
+  .cartscreen {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 960px) {
+  .cartscreen {
+    max-width: 800px;
+    flex-direction: column;
+  }
+
+  .cartscreen__left {
+    margin: 0;
+  }
+
+  .cartscreen__right {
+    margin: 1rem;
+  }
+}
