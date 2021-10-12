@@ -17,7 +17,7 @@ function HomeScreen() {
     <div className="homescreen">
       <h2 className="homescreen_title">Latest products</h2>
       <div className="homescreen__products">
-        <Product />
+        {loading ? <h2>Loading...</h2> : error ? <h2>{error}</h2> : products.map(product => <Product />)}
       </div>
     </div>
   )
