@@ -18,6 +18,11 @@ function ProductScreen({ match, history }) {
     }
   }, [dispatch, product, match])
 
+  const addToCartHandler = () => {
+    dispatch(addToCart(product._id, qty))
+    history.push("/cart")
+  }
+
   return (
     <div className="productscreen">
       {loading ? <h2>Loading...</h2> : error ? <h2>{error}</h2> :
@@ -35,19 +40,19 @@ function ProductScreen({ match, history }) {
           <div className="productscreen__right">
             <div ckassName="right__info">
               <p>Price: <span>${product.price}</span></p>
-              <p>Status:<span>{product.countInStock > 0 ? "In stock" : "Out of stock"}</span></p>
+              <p>Status:</p>
+              <p>Status:<span>{product.countInStock > 0 ? " In stock" : " Out of stock"}</span></p>
               <p>
                 Quantity:
                 <select value={qty} onChange={e => setQty(e.target.value)}>
                   {[...Array(product.countInStock).keys()].map(k => (<option value={x + 1} key={x + 1}>{x + 1}</option>))}
-                  <option value="1">1</option>
-                </select></p>
-              <p><button type="button">add to cart</button></p>
+                </select>
+              </p>
+              <p><button type="button" onClick={addToCartHandler}>add to cart</button></p>
             </div>
           </div>
         </>
       }
-
     </div>
   )
 }
