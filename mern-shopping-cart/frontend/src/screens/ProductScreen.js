@@ -1,4 +1,8 @@
 import './ProductScreen.css'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProductDetails } from '../redux/actions/productActions'
+import { addToCart } from '..redux/actions/cartActions'
 
 function ProductScreen() {
   return (
