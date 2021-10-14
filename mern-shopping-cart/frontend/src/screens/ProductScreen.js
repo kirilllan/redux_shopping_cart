@@ -4,7 +4,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails } from '../redux/actions/productActions'
 import { addToCart } from '..redux/actions/cartActions'
 
-function ProductScreen() {
+function ProductScreen({ match, history }) {
+
+  const [qty, setQty] = useState(1)
+  const dispatch = useDispatch()
+
+  const productDetails = useSelector(state => state.getProductDetails)
+  const { loading, error, product } = productDetails
+
+  useEffect(() => {
+    if (product && match.params.id !== product._id) {
+      dispatch(getProductDetails(match.params.id))
+    }
+  }, [dispatch, product, match])
+
   return (
     <div className="productscreen">
       <div className="productscreen__left">
