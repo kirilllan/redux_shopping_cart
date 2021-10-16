@@ -15,7 +15,7 @@ function CartScreen() {
         <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
           <div> Your cart is empty <Link to="/">Go back</Link></div>
-        ) : cartItems.map(item => <CartItem />)
+        ) : cartItems.map(item => <CartItem item={item} />)
         }
       </div>
       <div className="cartscreen__right">
