@@ -2,7 +2,7 @@ import './CartScreen.css'
 import CartItem from '../components/CartItem'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../redux/actions/cartActions'
+import { addToCart, removeFromCart } from '../redux/actions/cartActions'
 
 function CartScreen() {
 
@@ -14,13 +14,15 @@ function CartScreen() {
     dispatch(addToCart(id, qty))
   }
 
+  const removeHandler = id => { dispatch(removeFromCart(id)) }
+
   return (
     <div className="cartscreen">
       <div className="cartscreen__left">
         <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
           <div> Your cart is empty <Link to="/">Go back</Link></div>
-        ) : cartItems.map(item => <CartItem item={item} qtyChangeHandler={qtyChangeHandler} />)
+        ) : cartItems.map(item => <CartItem item={item} qtyChangeHandler={qtyChangeHandler} removeFromCart={removeHandler} />)
         }
       </div>
       <div className="cartscreen__right">
