@@ -16,6 +16,8 @@ function CartScreen() {
 
   const removeHandler = id => { dispatch(removeFromCart(id)) }
 
+  const getCartCount = () => cartItems.reduce((qty, item) => qty + +item.qty, 0)
+
   return (
     <div className="cartscreen">
       <div className="cartscreen__left">
@@ -27,7 +29,7 @@ function CartScreen() {
       </div>
       <div className="cartscreen__right">
         <div className="cartscreen__info">
-          <p>Subtotal (0) items</p>
+          <p>Subtotal {getCartCount()} items</p>
           <p>$Price</p>
         </div>
         <div>Proceed to checkout</div>
