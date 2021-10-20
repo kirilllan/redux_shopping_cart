@@ -12,14 +12,18 @@ const reducer = combineReducers({
 
 const middleWare = [thunk]
 
-const cartFromLocalStorage = localStorage.getItem()
+const cartFromLocalStorage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 
 const INITIAL_STATE = {
   cart: {
-    cartItems: 1
+    cartItems: cartFromLocalStorage
   }
 }
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleWare)))
+const store = createStore(
+  reducer,
+  INITIAL_STATE,
+  composeWithDevTools(applyMiddleware(...middleWare))
+)
 
 export default store
