@@ -9,6 +9,7 @@ const importData = async () => {
     await Product.deleteMany({})
     await Product.insertMany(productsData)
     console.log('data import SUCCESS')
+    process.exit()
   } catch {
     console.log('data import FAIL')
     process.exit(1)
